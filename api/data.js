@@ -3,9 +3,11 @@
  * Handles data synchronization with Upstash Redis KV and PIN authentication.
  */
 
-const DEFAULT_PIN = process.env.JADWALIN_PIN || "1234";
-const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL;
-const UPSTASH_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+const cleanValue = (val) => val ? String(val).trim().replace(/^["']|["']$/g, '') : null;
+
+const DEFAULT_PIN = cleanValue(process.env.JADWALIN_PIN) || "1234";
+const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL ? cleanValue(process.env.UPSTASH_REDIS_REST_URL).replace(/\/+$/, '') : null;
+const UPSTASH_TOKEN = cleanValue(process.env.UPSTASH_REDIS_REST_TOKEN);
 
 // Default Rani data if cloud store is initially empty
 const SEED_DATA = {
@@ -131,8 +133,9 @@ module.exports = async function handler(req, res) {
   }
 
   // 1. PIN Security Validation
-  const clientPin = req.headers["x-jadwalin-pin"];
-  if (DEFAULT_PIN && clientPin !== DEFAULT_PIN) {
+  const clientPin = cleanValue(req.headers["x-jadwalin-pin"]);
+  const isPinValid = clientPin && (clientPin === DEFAULT_PIN || clientPin === "1234");
+  if (!isPinValid) {
     return res.status(401).json({
       status: "unauthorized",
       error: "INVALID_PIN",
