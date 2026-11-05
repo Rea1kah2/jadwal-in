@@ -1,0 +1,108 @@
+{
+  "courses": [
+    {
+      "id": "c-1",
+      "name": "Algoritma & Struktur Data",
+      "code": "IF2101",
+      "lecturer": "Dr. Bambang Sutrisno",
+      "room": "Lab Komputer 2",
+      "dayOfWeek": 1,
+      "startTime": "08:00",
+      "endTime": "10:30",
+      "colorHex": "1E3A8A"
+    },
+    {
+      "id": "c-2",
+      "name": "Sistem Basis Data",
+      "code": "IF2102",
+      "lecturer": "Ir. Ratna Dewi, M.Kom",
+      "room": "Gedung B R.304",
+      "dayOfWeek": 1,
+      "startTime": "13:00",
+      "endTime": "15:30",
+      "colorHex": "0284C7"
+    },
+    {
+      "id": "c-3",
+      "name": "Pemrograman Web & Mobile",
+      "code": "IF2103",
+      "lecturer": "Faisal Rahman, S.T., M.T.",
+      "room": "Lab Software",
+      "dayOfWeek": 2,
+      "startTime": "09:00",
+      "endTime": "11:30",
+      "colorHex": "059669"
+    },
+    {
+      "id": "c-4",
+      "name": "Jaringan Komputer",
+      "code": "IF2104",
+      "lecturer": "Ahmad Hidayat, M.Cs",
+      "room": "Gedung C R.201",
+      "dayOfWeek": 3,
+      "startTime": "10:00",
+      "endTime": "12:30",
+      "colorHex": "D97706"
+    },
+    {
+      "id": "c-5",
+      "name": "Rekayasa Perangkat Lunak",
+      "code": "IF2105",
+      "lecturer": "Dr. Siti Nurhaliza",
+      "room": "Gedung A R.102",
+      "dayOfWeek": 4,
+      "startTime": "08:30",
+      "endTime": "11:00",
+      "colorHex": "7C3AED"
+    },
+    {
+      "id": "c-6",
+      "name": "Statistika & Probabilitas",
+      "code": "IF2106",
+      "lecturer": "Drs. Hendro Wibowo",
+      "room": "Gedung B R.205",
+      "dayOfWeek": 5,
+      "startTime": "08:00",
+      "endTime": "10:00",
+      "colorHex": "DC2626"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "t-1",
+      "courseId": "c-1",
+      "title": "Implementasi Binary Search Tree",
+      "dueDate": "2026-11-05T02:53:31.817Z",
+      "priority": "Tinggi",
+      "isCompleted": true,
+      "notes": "Gunakan bahasa C++ atau Python. Buat fungsi insert, delete, dan transversal."
+    },
+    {
+      "id": "t-2",
+      "courseId": "c-2",
+      "title": "Perancangan ERD Rumah Sakit",
+      "dueDate": "2026-11-06T10:53:31.817Z",
+      "priority": "Sedang",
+      "isCompleted": true,
+      "notes": "Normalisasi tabel hingga 3NF beserta kamus data."
+    },
+    {
+      "id": "t-3",
+      "courseId": "c-3",
+      "title": "Prototype Wireframe UI Aplikasi",
+      "dueDate": "2026-11-09T10:53:31.817Z",
+      "priority": "Rendah",
+      "isCompleted": true,
+      "notes": "Desain 5 flow utama di Figma."
+    },
+    {
+      "id": "t-4",
+      "courseId": "c-4",
+      "title": "Laporan Praktikum Subnetting",
+      "dueDate": "2026-11-03T10:53:31.817Z",
+      "priority": "Sedang",
+      "isCompleted": true,
+      "notes": "Sudah diunggah ke Google Classroom."
+    }
+  ]
+}

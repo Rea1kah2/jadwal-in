@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Jadwal-In • Swiss Academic OS</title>
+  
+  <!-- PWA & Apple Web App Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Jadwal-In">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- PIN LOCK SCREEN OVERLAY (Swiss Security Gate) -->
+  <div id="pin-lock-overlay" class="pin-lock-overlay">
+    <div class="pin-card">
+      <div class="brand-stamp" style="justify-content: center; margin-bottom: 12px;">Jadwal-In // Security</div>
+      <div class="pin-title">ENTER 4-DIGIT ACCESS PIN</div>
+      <div class="pin-subtitle">Masukkan PIN untuk membuka database akademik Anda.</div>
+      
+      <!-- 4 PIN Dots -->
+      <div class="pin-dots-row" id="pin-dots-group">
+        <div class="pin-dot"></div>
+        <div class="pin-dot"></div>
+        <div class="pin-dot"></div>
+        <div class="pin-dot"></div>
+      </div>
+
+      <div id="pin-error-msg" class="pin-error"></div>
+
+      <!-- Swiss 3x4 Keypad -->
+      <div class="pin-keypad">
+        <button class="pin-btn" data-num="1">1</button>
+        <button class="pin-btn" data-num="2">2</button>
+        <button class="pin-btn" data-num="3">3</button>
+        <button class="pin-btn" data-num="4">4</button>
+        <button class="pin-btn" data-num="5">5</button>
+        <button class="pin-btn" data-num="6">6</button>
+        <button class="pin-btn" data-num="7">7</button>
+        <button class="pin-btn" data-num="8">8</button>
+        <button class="pin-btn" data-num="9">9</button>
+        <button class="pin-btn pin-func" id="btn-pin-clear">C</button>
+        <button class="pin-btn" data-num="0">0</button>
+        <button class="pin-btn pin-func" id="btn-pin-backspace">⌫</button>
+      </div>
+
+      <div class="pin-hint">[ DEFAULT PIN: 1234 ]</div>
+    </div>
+  </div>
+
+  <div id="app" class="app-container">
+    
+    <!-- Technical Header Strip (Swiss Grid) -->
+    <header class="technical-header">
+      <div class="header-top-row">
+        <div class="brand-stamp">Jadwal-In // Academic</div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span id="cloud-sync-status" class="mono-tag" style="font-size: 9px; padding: 1px 5px;">[CLOUD // 🟢 SYNCED]</span>
+          <div class="system-clock" id="live-clock">--:--:--</div>
+        </div>
+      </div>
+      <div class="header-ticker-row">
+        <span id="header-date-label">MEMUAT TANGGAL...</span>
+        <span class="ticker-status" id="header-ticker-status">MEMUAT STATUS...</span>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="main-content">
+      
+      <!-- TAB 1: TODAY (HARI INI) -->
+      <section id="tab-today" class="tab-pane active">
+        <!-- Now / Next Class Glance Box -->
+        <div id="today-glance-slot">
+          <!-- Injected by app.js -->
+        </div>
+
+        <!-- Section: Timeline Kuliah Hari Ini -->
+        <div class="section-block">
+          <div class="section-headline">
+            <span class="section-label" id="today-timeline-label">01 // TIMELINE KULIAH HARI INI</span>
+            <span class="section-metric" id="today-timeline-metric">0 KELAS</span>
+          </div>
+          <div id="today-timeline-track" class="timeline-track">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+        <!-- Section: Deadline Terdekat -->
+        <div class="section-block">
+          <div class="section-headline">
+            <span class="section-label" style="color: var(--accent-alert);">02 // DEADLINE KRITIS (&lt; 48 JAM)</span>
+            <span class="section-metric" id="today-urgent-metric">0 TUGAS</span>
+          </div>
+          <div id="today-urgent-list">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: SCHEDULE (JADWAL MINGGUAN) -->
+      <section id="tab-schedule" class="tab-pane">
+        <!-- Day Selector Strip (6 Monospace Cells) -->
+        <div class="day-selector-strip" id="schedule-day-strip">
+          <button class="day-cell-btn active" data-day="1">
+            <span class="day-short-label">SEN</span>
+            <div class="day-dot-indicator"></div>
+          </button>
+          <button class="day-cell-btn" data-day="2">
+            <span class="day-short-label">SEL</span>
+            <div class="day-dot-indicator"></div>
+          </button>
+          <button class="day-cell-btn" data-day="3">
+            <span class="day-short-label">RAB</span>
+            <div class="day-dot-indicator"></div>
+          </button>
+          <button class="day-cell-btn" data-day="4">
+            <span class="day-short-label">KAM</span>
+            <div class="day-dot-indicator"></div>
+          </button>
+          <button class="day-cell-btn" data-day="5">
+            <span class="day-short-label">JUM</span>
+            <div class="day-dot-indicator"></div>
+          </button>
+          <button class="day-cell-btn" data-day="6">
+            <span class="day-short-label">SAB</span>
+            <div class="day-dot-indicator"></div>
+          </button>
+        </div>
+
+        <!-- Schedule Section -->
+        <div class="section-block">
+          <div class="section-headline">
+            <span class="section-label" id="schedule-day-label">JADWAL KULIAH // SENIN</span>
+            <button id="btn-open-course-modal" class="action-bar-btn" style="padding: 2px 8px; font-size: 10px;">+ TAMBAH MATKUL</button>
+          </div>
+          <div id="schedule-timeline-track" class="timeline-track">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: ASSIGNMENTS (TUGAS & DEADLINE) -->
+      <section id="tab-assignments" class="tab-pane">
+        <!-- Segmented Control -->
+        <div class="swiss-segmented">
+          <button class="swiss-seg-btn active" id="seg-active" data-status="active">TUGAS AKTIF (<span id="count-active">0</span>)</button>
+          <button class="swiss-seg-btn" id="seg-completed" data-status="completed">TERSELESAIKAN (<span id="count-completed">0</span>)</button>
+        </div>
+
+        <!-- Course Filter Chips -->
+        <div class="filter-bar" id="course-filter-bar">
+          <button class="tech-chip active" data-course-id="all">[SEMUA MATKUL]</button>
+          <!-- Dynamic course chips -->
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 16px;">
+          <button id="btn-open-task-modal" class="action-bar-btn">+ CATAT TUGAS BARU</button>
+        </div>
+
+        <!-- Dynamic Time Horizon Container -->
+        <div id="assignments-horizon-container">
+          <!-- Injected by app.js (Hari ini & Besok, Minggu Ini, Mendatang) -->
+        </div>
+      </section>
+
+      <!-- TAB 4: SETTINGS (KONFIGURASI) -->
+      <section id="tab-settings" class="tab-pane">
+        <!-- Persona Box -->
+        <div class="settings-box">
+          <div class="settings-box-header">IDENTITAS MAHASISWA // SUBJEK</div>
+          <div class="kv-row">
+            <span class="kv-key">NAMA PENGGUNA</span>
+            <span class="kv-val">Rani (20 Tahun)</span>
+          </div>
+          <div class="kv-row">
+            <span class="kv-key">STATUS AKADEMIK</span>
+            <span class="kv-val">Semester 3 • Teknik / SI</span>
+          </div>
+          <div class="kv-row">
+            <span class="kv-key">BEBAN STUDI</span>
+            <span class="kv-val" id="stat-total-courses">7 Mata Kuliah</span>
+          </div>
+        </div>
+
+        <!-- Cloud & Security Settings Box -->
+        <div class="settings-box">
+          <div class="settings-box-header">KEAMANAN &amp; SINKRONISASI CLOUD</div>
+          <div class="kv-row">
+            <span class="kv-key">INFRASTRUKTUR 24/7</span>
+            <span class="kv-val" style="color: var(--accent-success);">Vercel Serverless</span>
+          </div>
+          <div class="kv-row">
+            <span class="kv-key">DATABASE</span>
+            <span class="kv-val">Upstash Redis KV (Cloud)</span>
+          </div>
+          <div class="kv-row">
+            <span class="kv-key">STATUS PIN</span>
+            <span class="kv-val" style="color: var(--accent-alert);">AKTIF (4-DIGIT)</span>
+          </div>
+          <div style="margin-top: 10px;">
+            <button id="btn-lock-now" class="action-bar-btn" style="width: 100%;">
+              🔒 KUNCI APLIKASI SEKARANG (LOCK PIN)
+            </button>
+          </div>
+        </div>
+
+        <!-- Metrics Box -->
+        <div class="settings-box">
+          <div class="settings-box-header">STATUS DATABASE LOKAL</div>
+          <div class="kv-row">
+            <span class="kv-key">TUGAS BELUM SELESAI</span>
+            <span class="kv-val" style="color: var(--accent-alert);" id="stat-active-tasks">0</span>
+          </div>
+          <div class="kv-row">
+            <span class="kv-key">TUGAS SELESAI DIARSIP</span>
+            <span class="kv-val" style="color: var(--accent-success);" id="stat-completed-tasks">0</span>
+          </div>
+        </div>
+
+        <!-- Management Actions -->
+        <div class="settings-box">
+          <div class="settings-box-header">TINDAKAN MANAJEMEN DATA</div>
+          <button id="btn-reset-sample" class="action-bar-btn" style="width: 100%; margin-bottom: 8px;">
+            ↺ MUAT ULANG DATA SAMPEL RANI
+          </button>
+          <button id="btn-clear-data" class="action-bar-btn" style="width: 100%; border-color: var(--accent-alert); color: var(--accent-alert);">
+            ✕ KOSONGKAN SELURUH DATA LOKAL
+          </button>
+        </div>
+      </section>
+      
+    </main>
+
+    <!-- Bottom Navigation Bar (4-Grid Monospace) -->
+    <nav class="bottom-nav-bar">
+      <button class="nav-tab-btn active" data-tab="tab-today">
+        <span class="nav-tab-label">TODAY</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-schedule">
+        <span class="nav-tab-label">JADWAL</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-assignments">
+        <span class="nav-tab-label">TUGAS</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-settings">
+        <span class="nav-tab-label">CONFIG</span>
+      </button>
+    </nav>
+    
+  </div>
+
+  <!-- MODAL: CATAT TUGAS BARU -->
+  <div id="modal-task" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">+ CATAT TUGAS BARU</h3>
+        <button class="modal-close-btn" id="btn-close-task-modal">✕</button>
+      </div>
+      <form id="form-add-task">
+        <div class="form-group">
+          <label class="form-label">MATA KULIAH TERKAIT *</label>
+          <select id="task-course-select" class="form-input" required>
+            <!-- Injected by app.js -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">JUDUL TUGAS / PROYEK *</label>
+          <input type="text" id="task-title-input" class="form-input" placeholder="misal: Implementasi B-Tree C++" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label class="form-label">TANGGAL DEADLINE *</label>
+            <input type="date" id="task-date-input" class="form-input" required>
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">JAM DEADLINE *</label>
+            <input type="time" id="task-time-input" class="form-input" value="23:59" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">TINGKAT PRIORITAS</label>
+          <select id="task-priority-select" class="form-input">
+            <option value="Rendah">Rendah (Penyelesaian Fleksibel)</option>
+            <option value="Sedang" selected>Sedang (Tugas Rutin Kuliah)</option>
+            <option value="Tinggi">Tinggi (Ujian / Proyek Besar)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">CATATAN &amp; FORMAT PENGUMPULAN (OPSIONAL)</label>
+          <textarea id="task-notes-input" class="form-input form-textarea" rows="2" placeholder="Tulis instruksi pengumpulan atau catatan dosen..."></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="tech-btn tech-btn-ghost" id="btn-cancel-task">BATAL</button>
+          <button type="submit" class="tech-btn tech-btn-primary">SIMPAN TUGAS</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: TAMBAH MATA KULIAH -->
+  <div id="modal-course" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">+ TAMBAH MATA KULIAH</h3>
+        <button class="modal-close-btn" id="btn-close-course-modal">✕</button>
+      </div>
+      <form id="form-add-course">
+        <div class="form-group">
+          <label class="form-label">NAMA MATA KULIAH *</label>
+          <input type="text" id="course-name-input" class="form-input" placeholder="misal: Sistem Operasi &amp; Jaringan" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label class="form-label">KODE MATKUL</label>
+            <input type="text" id="course-code-input" class="form-input" placeholder="IF2204">
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">HARI KULIAH</label>
+            <select id="course-day-select" class="form-input">
+              <option value="1">Senin</option>
+              <option value="2">Selasa</option>
+              <option value="3">Rabu</option>
+              <option value="4">Kamis</option>
+              <option value="5">Jumat</option>
+              <option value="6">Sabtu</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label class="form-label">JAM MULAI</label>
+            <input type="time" id="course-start-input" class="form-input" value="08:00" required>
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">JAM SELESAI</label>
+            <input type="time" id="course-end-input" class="form-input" value="10:30" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label class="form-label">RUANGAN / GEDUNG</label>
+            <input type="text" id="course-room-input" class="form-input" placeholder="Lab Komputer 3">
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">DOSEN PENGAMPU</label>
+            <input type="text" id="course-lecturer-input" class="form-input" placeholder="Prof. Bambang">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">AKSEN WARNA INDIKATOR</label>
+          <select id="course-color-select" class="form-input">
+            <option value="1E3A8A">Deep Navy Blue</option>
+            <option value="0284C7">Sky Technical Blue</option>
+            <option value="059669">Emerald Lab Green</option>
+            <option value="D97706">Amber Warning Gold</option>
+            <option value="7C3AED">Violet Purple</option>
+            <option value="DC2626">Crimson Red</option>
+            <option value="475569">Neutral Slate</option>
+          </select>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="tech-btn tech-btn-ghost" id="btn-cancel-course">BATAL</button>
+          <button type="submit" class="tech-btn tech-btn-primary">SIMPAN MATA KULIAH</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B0010012CE0000100000001 /* JadwalInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020012CE0000100000001 /* JadwalInApp.swift */; };
+		8B0010022CE0000100000001 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020022CE0000100000001 /* MainTabView.swift */; };
+		8B0010032CE0000100000001 /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020032CE0000100000001 /* ScheduleStore.swift */; };
+		8B0010042CE0000100000001 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020042CE0000100000001 /* Course.swift */; };
+		8B0010052CE0000100000001 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020052CE0000100000001 /* Assignment.swift */; };
+		8B0010062CE0000100000001 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020062CE0000100000001 /* DayOfWeek.swift */; };
+		8B0010072CE0000100000001 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020072CE0000100000001 /* Priority.swift */; };
+		8B0010082CE0000100000001 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020082CE0000100000001 /* TodayView.swift */; };
+		8B0010092CE0000100000001 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020092CE0000100000001 /* ScheduleView.swift */; };
+		8B0010102CE0000100000001 /* AddCourseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020102CE0000100000001 /* AddCourseSheet.swift */; };
+		8B0010112CE0000100000001 /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020112CE0000100000001 /* AssignmentsView.swift */; };
+		8B0010122CE0000100000001 /* AddAssignmentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020122CE0000100000001 /* AddAssignmentSheet.swift */; };
+		8B0010132CE0000100000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020132CE0000100000001 /* SettingsView.swift */; };
+		8B0010142CE0000100000001 /* ColorTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020142CE0000100000001 /* ColorTokens.swift */; };
+		8B0010152CE0000100000001 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020152CE0000100000001 /* Typography.swift */; };
+		8B0010162CE0000100000001 /* CourseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020162CE0000100000001 /* CourseCard.swift */; };
+		8B0010172CE0000100000001 /* AssignmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020172CE0000100000001 /* AssignmentRow.swift */; };
+		8B0010182CE0000100000001 /* UrgencyBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020182CE0000100000001 /* UrgencyBadge.swift */; };
+		8B0010192CE0000100000001 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020192CE0000100000001 /* EmptyStateView.swift */; };
+		8B0010202CE0000100000001 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0020202CE0000100000001 /* Date+Extensions.swift */; };
+		8B0010992CE0000100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B0020992CE0000100000001 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8B0020012CE0000100000001 /* JadwalInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JadwalInApp.swift"; sourceTree = "<group>"; };
+		8B0020022CE0000100000001 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabView.swift"; sourceTree = "<group>"; };
+		8B0020032CE0000100000001 /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleStore.swift"; sourceTree = "<group>"; };
+		8B0020042CE0000100000001 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course.swift"; sourceTree = "<group>"; };
+		8B0020052CE0000100000001 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assignment.swift"; sourceTree = "<group>"; };
+		8B0020062CE0000100000001 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayOfWeek.swift"; sourceTree = "<group>"; };
+		8B0020072CE0000100000001 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Priority.swift"; sourceTree = "<group>"; };
+		8B0020082CE0000100000001 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayView.swift"; sourceTree = "<group>"; };
+		8B0020092CE0000100000001 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleView.swift"; sourceTree = "<group>"; };
+		8B0020102CE0000100000001 /* AddCourseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCourseSheet.swift"; sourceTree = "<group>"; };
+		8B0020112CE0000100000001 /* AssignmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssignmentsView.swift"; sourceTree = "<group>"; };
+		8B0020122CE0000100000001 /* AddAssignmentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddAssignmentSheet.swift"; sourceTree = "<group>"; };
+		8B0020132CE0000100000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
+		8B0020142CE0000100000001 /* ColorTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorTokens.swift"; sourceTree = "<group>"; };
+		8B0020152CE0000100000001 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography.swift"; sourceTree = "<group>"; };
+		8B0020162CE0000100000001 /* CourseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CourseCard.swift"; sourceTree = "<group>"; };
+		8B0020172CE0000100000001 /* AssignmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssignmentRow.swift"; sourceTree = "<group>"; };
+		8B0020182CE0000100000001 /* UrgencyBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UrgencyBadge.swift"; sourceTree = "<group>"; };
+		8B0020192CE0000100000001 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyStateView.swift"; sourceTree = "<group>"; };
+		8B0020202CE0000100000001 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		8B0020992CE0000100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B0000012CE0000100000001 /* JadwalIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JadwalIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B0030012CE0000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B0040002CE0000100000001 = {
+			isa = PBXGroup;
+			children = (
+				8B0040012CE0000100000001 /* JadwalIn */,
+				8B0040092CE0000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B0040012CE0000100000001 /* JadwalIn */ = {
+			isa = PBXGroup;
+			children = (
+				8B0040022CE0000100000001 /* App */,
+				8B0040032CE0000100000001 /* Models */,
+				8B0040042CE0000100000001 /* Store */,
+				8B0040052CE0000100000001 /* Features */,
+				8B0040062CE0000100000001 /* Shared */,
+				8B0020992CE0000100000001 /* Assets.xcassets */,
+			);
+			path = JadwalIn;
+			sourceTree = "<group>";
+		};
+		8B0040022CE0000100000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020012CE0000100000001 /* JadwalInApp.swift */,
+				8B0020022CE0000100000001 /* MainTabView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8B0040032CE0000100000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020042CE0000100000001 /* Course.swift */,
+				8B0020052CE0000100000001 /* Assignment.swift */,
+				8B0020062CE0000100000001 /* DayOfWeek.swift */,
+				8B0020072CE0000100000001 /* Priority.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B0040042CE0000100000001 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020032CE0000100000001 /* ScheduleStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		8B0040052CE0000100000001 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8B0040102CE0000100000001 /* Today */,
+				8B0040112CE0000100000001 /* Schedule */,
+				8B0040122CE0000100000001 /* Assignments */,
+				8B0040132CE0000100000001 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		8B0040102CE0000100000001 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020082CE0000100000001 /* TodayView.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		8B0040112CE0000100000001 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020092CE0000100000001 /* ScheduleView.swift */,
+				8B0020102CE0000100000001 /* AddCourseSheet.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		8B0040122CE0000100000001 /* Assignments */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020112CE0000100000001 /* AssignmentsView.swift */,
+				8B0020122CE0000100000001 /* AddAssignmentSheet.swift */,
+			);
+			path = Assignments;
+			sourceTree = "<group>";
+		};
+		8B0040132CE0000100000001 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020132CE0000100000001 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8B0040062CE0000100000001 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8B0040202CE0000100000001 /* Theme */,
+				8B0040212CE0000100000001 /* Components */,
+				8B0040222CE0000100000001 /* Extensions */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8B0040202CE0000100000001 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020142CE0000100000001 /* ColorTokens.swift */,
+				8B0020152CE0000100000001 /* Typography.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		8B0040212CE0000100000001 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020162CE0000100000001 /* CourseCard.swift */,
+				8B0020172CE0000100000001 /* AssignmentRow.swift */,
+				8B0020182CE0000100000001 /* UrgencyBadge.swift */,
+				8B0020192CE0000100000001 /* EmptyStateView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8B0040222CE0000100000001 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B0020202CE0000100000001 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B0040092CE0000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B0000012CE0000100000001 /* JadwalIn.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B0050012CE0000100000001 /* JadwalIn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B0060012CE0000100000001 /* Build configuration list for PBXNativeTarget "JadwalIn" */;
+			buildPhases = (
+				8B0070012CE0000100000001 /* Sources */,
+				8B0030012CE0000100000001 /* Frameworks */,
+				8B0070022CE0000100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JadwalIn;
+			productName = JadwalIn;
+			productReference = 8B0000012CE0000100000001 /* JadwalIn.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B0000002CE0000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					8B0050012CE0000100000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 8B0060002CE0000100000001 /* Build configuration list for PBXProject "JadwalIn" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B0040002CE0000100000001;
+			productRefGroup = 8B0040092CE0000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B0050012CE0000100000001 /* JadwalIn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B0070022CE0000100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0010992CE0000100000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B0070012CE0000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0010012CE0000100000001 /* JadwalInApp.swift in Sources */,
+				8B0010022CE0000100000001 /* MainTabView.swift in Sources */,
+				8B0010032CE0000100000001 /* ScheduleStore.swift in Sources */,
+				8B0010042CE0000100000001 /* Course.swift in Sources */,
+				8B0010052CE0000100000001 /* Assignment.swift in Sources */,
+				8B0010062CE0000100000001 /* DayOfWeek.swift in Sources */,
+				8B0010072CE0000100000001 /* Priority.swift in Sources */,
+				8B0010082CE0000100000001 /* TodayView.swift in Sources */,
+				8B0010092CE0000100000001 /* ScheduleView.swift in Sources */,
+				8B0010102CE0000100000001 /* AddCourseSheet.swift in Sources */,
+				8B0010112CE0000100000001 /* AssignmentsView.swift in Sources */,
+				8B0010122CE0000100000001 /* AddAssignmentSheet.swift in Sources */,
+				8B0010132CE0000100000001 /* SettingsView.swift in Sources */,
+				8B0010142CE0000100000001 /* ColorTokens.swift in Sources */,
+				8B0010152CE0000100000001 /* Typography.swift in Sources */,
+				8B0010162CE0000100000001 /* CourseCard.swift in Sources */,
+				8B0010172CE0000100000001 /* AssignmentRow.swift in Sources */,
+				8B0010182CE0000100000001 /* UrgencyBadge.swift in Sources */,
+				8B0010192CE0000100000001 /* EmptyStateView.swift in Sources */,
+				8B0010202CE0000100000001 /* Date+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8B0080012CE0000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8B0080022CE0000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B0080032CE0000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JadwalIn;
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joki.jadwalin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B0080042CE0000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JadwalIn;
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joki.jadwalin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B0060002CE0000100000001 /* Build configuration list for PBXProject "JadwalIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B0080012CE0000100000001 /* Debug */,
+				8B0080022CE0000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B0060012CE0000100000001 /* Build configuration list for PBXNativeTarget "JadwalIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B0080032CE0000100000001 /* Debug */,
+				8B0080042CE0000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 8B0000002CE0000100000001 /* Project object */;
+}
